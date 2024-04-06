@@ -1,0 +1,5 @@
+email-validator
+fastapi
+gunicorn
+pydantic
+uvicorn
