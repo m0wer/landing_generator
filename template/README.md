@@ -32,7 +32,5 @@ The following variables are available for substitution:
 - `{{ item_4_title }}` - Title for bottom right item in the gridbox
 - `{{ item_4_description }}` - Description for bottom right item in the gridbox
 - `{{ button_text }}` - Text for the button next to the email input field
-- `{{ form_action_url }}` - URL where the form should post the `email` field
 
 > Form method is always POST
-

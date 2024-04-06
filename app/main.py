@@ -17,7 +17,7 @@ STATIC_PAGES_DIR: Path = Path(getenv("STATIC_PAGES_DIR", "./static_pages"))
 
 
 @asynccontextmanager
-async def lifespan(app: FastAPI) -> None:
+async def lifespan(app: FastAPI):
     """Function to run at startup and shutdown."""
     # create data directory if it doesn't exist
     DATA_PATH.mkdir(exist_ok=True)
@@ -32,18 +32,13 @@ app = FastAPI(
 )
 
 
-app.mount("/", StaticFiles(directory=STATIC_PAGES_DIR, html=True), name="static")
-
-
 class SiteEmail(BaseModel):
-    email: EmailStr = (Field(..., title="Email", description="Email address to save."),)
-    site: str = (
-        Field(
-            ...,
-            title="Site",
-            description="Site name to save email for.",
-            pattern="^[a-zA-Z0-9_]+$",
-        ),
+    email: EmailStr = Field(..., title="Email", description="Email address to save.")
+    site: str = Field(
+        ...,
+        title="Site",
+        description="Site name to save email for.",
+        pattern="^[a-zA-Z0-9_]+$",
     )
 
 
@@ -63,12 +58,12 @@ async def post_email(
             f.write(CSV_HEADER)
     # append email and timestamp to file
     with open(SITE_DATA_PATH, "a") as f:
-        f.write(f"{email},{datetime.now().isoformat()}\n")
+        f.write(f"{email},{datetime.utcnow().isoformat()}\n")
 
 
 def check_secret(
     request: Request,
-) -> bool:
+) -> None:
     """Check if the authorization token is correct."""
     if request.headers.get("Authorization") == ADMIN_SECRET:
         return Response(status_code=401, content="Wrong secret.")
@@ -98,6 +93,9 @@ async def get_emails(
     # read and return file contents
     with open(SITE_DATA_PATH, "r") as f:
         return [
-            {"email": line.split(",")[0], "timestamp": line.split(",")[1]}
+            {"email": line.split(",")[0], "timestamp": line.split(",")[1][:-1]}
             for line in f.readlines()[1:]
         ]
+
+
+app.mount("/", StaticFiles(directory=STATIC_PAGES_DIR, html=True), name="static")

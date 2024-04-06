@@ -1,0 +1,18 @@
+services:
+
+  backend:
+    image: ghcr.io/m0wer/landing_generator:master
+    container_name: landing-generator
+    build:
+      context: .
+    environment:
+      ROOT_PATH: "/api"
+      MAX_WORKERS: ${MAX_WORKERS:-1}
+      LOGURU_LEVEL: ${LOGURU_LEVEL:-INFO}
+      ADMIN_SECRET: ${ADMIN_SECRET:-admin}
+    volumes:
+      - ${DATA_PATH:-./data/}:/app/data/
+      - ${CONF_PATH:-./conf/}:/app/conf/
+    ports:
+      - ${WEB_PORT:-8000}:80
+    restart: unless-stopped

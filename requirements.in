@@ -1,5 +1,8 @@
 email-validator
 fastapi
 gunicorn
+Jinja2
+loguru
 pydantic
+pyyaml
 uvicorn
