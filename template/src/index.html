@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.ico">
+        <title> {{ title }} </title>
+        <meta name="description" content="{{ description }}">
+</head>
+<body class="flex xl:flex-row flex-col h-screen items-center justify-start md:p-12 md:pt-16 p-8 pt-16">
+    <!-- Left container (top on mobile)-->
+    <div class="flex flex-col md:py-2 my-2 xl:w-1/2 w-full md:h-full h-min md:justify-center sm:items-center">
+        <div>
+            <h1 class="md:text-8xl sm:text-7xl text-5xl lg:max-w-2xl sm:max-w-sm md:max-w-2xl font-bold text-black">
+                    {{ tagline }}
+            </h1>
+            <div class="flex my-6">
+                <p class="max-w-lg lg:max-w-2xl text-black text-xl">
+                    {{ description }}
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Right container (bottom on mobile)-->
+    <div class="flex xl:flex-col flex-col-reverse justify-center items-center xl:items-start xl:w-1/2 w-full max-w-2xl z-10">
+        <div class="sm:grid sm:grid-flow-row sm:grid-cols-3 sm:grid-rows-2 lg:max-w-2xl w-full my-14">
+            <div class="col-span-1 text-white bg-white bg-opacity-50 border-2 border-black rounded-xl p-6 m-2">
+                <div class="w-12 h-12 rounded-lg p-2 mb-2 text-black">
+                    <svg class="fill-current" viewBox="0 0 24 24"><path d="M18,8.5a2.5,2.5,0,0,1-5,0A2.5,2.5,0,0,1,18,8.5Zm-.006,6.866a11.065,11.065,0,0,1-1.163,4.569A7.634,7.634,0,0,1,10,24H9V18.5A3.517,3.517,0,0,0,5.5,15H0V14A7.634,7.634,0,0,1,4.065,7.169,11.065,11.065,0,0,1,8.634,6.006,15.487,15.487,0,0,1,20.972,0h0A3.009,3.009,0,0,1,24,3,15.507,15.507,0,0,1,17.994,15.366ZM2.084,13H4.346A34.361,34.361,0,0,1,6.955,8.237a8.993,8.993,0,0,0-1.993.72A5.519,5.519,0,0,0,2.084,13Zm13.679,4.045A34.361,34.361,0,0,1,11,19.654v2.262a5.519,5.519,0,0,0,4.043-2.878A8.993,8.993,0,0,0,15.763,17.045ZM22,2.972A1,1,0,0,0,21,2c-5.16.147-8.65,2.124-12.018,6.822a29.92,29.92,0,0,0-2.471,4.271,5.5,5.5,0,0,1,4.4,4.4,29.92,29.92,0,0,0,4.271-2.471C19.876,11.65,21.853,8.16,22,2.972ZM6.122,17.879a3.015,3.015,0,0,1,0,4.242c-.907.906-3.622,1.465-4.748,1.664l-1.406.247.247-1.406c.2-1.126.758-3.841,1.664-4.748A3.073,3.073,0,0,1,6.122,17.879ZM5,20a.993.993,0,0,0-.293-.707,1,1,0,0,0-1.414,0A7.318,7.318,0,0,0,2.5,21.5a7.342,7.342,0,0,0,2.208-.794A.993.993,0,0,0,5,20Z"/></svg>
+                </div>
+                    <h3 class="font-extrabold text-xl mb-4 text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-400">{{ item_1_title }}</h3>
+                <p class="font-regular text-gray-800">
+                        {{ item_1_description }}
+                </p>
+            </div>
+            <div class="col-span-2 text-white bg-white bg-opacity-50 border-2 border-black rounded-xl p-6 m-2">
+                <div class="w-12 h-12 rounded-lg p-2 mb-2 text-black">
+                    <svg class="fill-current" viewBox="0 0 24 24" ><path d="M1,4.75H3.736a3.728,3.728,0,0,0,7.195,0H23a1,1,0,0,0,0-2H10.931a3.728,3.728,0,0,0-7.195,0H1a1,1,0,0,0,0,2ZM7.333,2a1.75,1.75,0,1,1-1.75,1.75A1.752,1.752,0,0,1,7.333,2Z"/><path d="M23,11H20.264a3.727,3.727,0,0,0-7.194,0H1a1,1,0,0,0,0,2H13.07a3.727,3.727,0,0,0,7.194,0H23a1,1,0,0,0,0-2Zm-6.333,2.75A1.75,1.75,0,1,1,18.417,12,1.752,1.752,0,0,1,16.667,13.75Z"/><path d="M23,19.25H10.931a3.728,3.728,0,0,0-7.195,0H1a1,1,0,0,0,0,2H3.736a3.728,3.728,0,0,0,7.195,0H23a1,1,0,0,0,0-2ZM7.333,22a1.75,1.75,0,1,1,1.75-1.75A1.753,1.753,0,0,1,7.333,22Z"/></svg>
+                </div>
+                    <h3 class="font-extrabold text-xl mb-4 text-transparent bg-clip-text bg-gradient-to-l from-rose-400 via-fuchsia-500 to-indigo-400">{{ item_2_title }}</h3>
+                <p class="font-regular text-gray-800">
+                        {{ item_2_description }}
+                </p>
+            </div>
+            <div class="col-span-2 text-white bg-white bg-opacity-50 border-2 border-black rounded-xl p-6 m-2">
+                <div class="w-12 h-12 rounded-lg p-2 mb-2 text-black">
+                    <svg class="fill-current" viewBox="0 0 24 24"><path d="M18.581,2.14,12.316.051a1,1,0,0,0-.632,0L5.419,2.14A4.993,4.993,0,0,0,2,6.883V12c0,7.563,9.2,11.74,9.594,11.914a1,1,0,0,0,.812,0C12.8,23.74,22,19.563,22,12V6.883A4.993,4.993,0,0,0,18.581,2.14ZM20,12c0,5.455-6.319,9.033-8,9.889-1.683-.853-8-4.42-8-9.889V6.883A3,3,0,0,1,6.052,4.037L12,2.054l5.948,1.983A3,3,0,0,1,20,6.883Z"/><path d="M15.3,8.3,11.112,12.5,8.868,10.16a1,1,0,1,0-1.441,1.386l2.306,2.4a1.872,1.872,0,0,0,1.345.6h.033a1.873,1.873,0,0,0,1.335-.553l4.272-4.272A1,1,0,0,0,15.3,8.3Z"/></svg>
+                </div>
+                        <h3 class="font-extrabold text-xl mb-4 text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-400">{{ item_3_title }}</h3>
+                <p class="font-regular text-gray-800">
+                        {{ item_3_description }}
+                </p>
+            </div>
+            <div class="col-span-1 text-white bg-white bg-opacity-50 border-2 border-black rounded-xl p-6 m-2">
+                <div class="w-12 h-12 rounded-lg p-2 mb-2 text-black">
+                    <svg class="fill-current" viewBox="0 0 24 24"><path d="M19,8.424V7A7,7,0,0,0,5,7V8.424A5,5,0,0,0,2,13v6a5.006,5.006,0,0,0,5,5H17a5.006,5.006,0,0,0,5-5V13A5,5,0,0,0,19,8.424ZM7,7A5,5,0,0,1,17,7V8H7ZM20,19a3,3,0,0,1-3,3H7a3,3,0,0,1-3-3V13a3,3,0,0,1,3-3H17a3,3,0,0,1,3,3Z"/><path d="M12,14a1,1,0,0,0-1,1v2a1,1,0,0,0,2,0V15A1,1,0,0,0,12,14Z"/></svg>
+                </div>
+                        <h3 class="font-extrabold text-xl mb-4 text-transparent bg-clip-text bg-gradient-to-l from-rose-400 via-fuchsia-500 to-indigo-400">{{ item_3_title }}</h3>
+                <p class="font-regular text-gray-800">
+                        {{ item_4_description }}
+                </p>
+            </div>
+        </div>
+            <form action="{{ form_action_url }}" method="POST" class="relative flex flex-col justify-start xl:items-start items-center w-full sm:w-96">
+            <input type="text" id="email" placeholder="awesome@mail.org" class="rounded-xl border-2 px-4 py-2 border-black lg:w-96 w-full bg-white bg-opacity-60 xl:mt-16" />
+            <div class="relative group max-w-2xl mt-8">
+                <div class="absolute transition-all duration-500 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt" >
+                </div>
+                <button action="submit" title="I am interested"
+                    class="relative w-full items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-gray-900 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                >
+                {{ button_text }}
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="absolute h-full w-full z-[-1] bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
+    <div class="absolute top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]"></div>
+    <div class="absolute bottom-auto z[-2] left-auto right-0 top-0 h-[500px] w-[500px] -translate-x-[30%] translate-y-[20%] rounded-full bg-[rgba(173,109,244,0.5)] opacity-50 blur-[80px]"></div>
+</body>
+</html>
+
+
