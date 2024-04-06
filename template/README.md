@@ -3,8 +3,8 @@
 A simple landing website for templating by substituting the {{ content }} variables.
 
 ![desktop](./screenshots/desktop.png)
-![tablet](./screenshots/tablet.png)
-![mobile](./screenshots/mobile.png)
+
+> You can see tablet and mobile screenshots in the `screenshots` directory.
 
 ## Development
 
