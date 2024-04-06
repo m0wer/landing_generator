@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="favicon.ico">
-        <title> {{ title }} </title>
-        <meta name="description" content="{{ description }}">
+    {{ analytics_html }}
+    <title> {{ title }} </title>
+    <meta name="description" content="{{ description }}">
 </head>
 <body class="flex xl:flex-row flex-col h-screen items-center justify-start md:p-12 md:pt-16 p-8 pt-16">
     <!-- Left container (top on mobile)-->
@@ -63,16 +64,17 @@
             </div>
         </div>
             <form action="{{ form_action_url }}" method="POST" class="relative flex flex-col justify-start xl:items-start items-center w-full sm:w-96">
-            <input type="text" id="email" placeholder="awesome@mail.org" class="rounded-xl border-2 px-4 py-2 border-black lg:w-96 w-full bg-white bg-opacity-60 xl:mt-16" />
-            <div class="relative group max-w-2xl mt-8">
-                <div class="absolute transition-all duration-500 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt" >
+                <input type="text" name="email" id="email" placeholder="awesome@mail.org" class="rounded-xl border-2 px-4 py-2 border-black lg:w-96 w-full bg-white bg-opacity-60 xl:mt-16" />
+                <input type="hidden" id="page_identifier" name="page_identifier" value="{{ page_identifier }}" />
+                <div class="relative group max-w-2xl mt-8">
+                    <div class="absolute transition-all duration-500 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt" >
+                    </div>
+                    <button action="submit" title="I am interested"
+                        class="relative w-full items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-gray-900 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                    >
+                    {{ button_text }}
+                    </button>
                 </div>
-                <button action="submit" title="I am interested"
-                    class="relative w-full items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-gray-900 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
-                >
-                {{ button_text }}
-                </button>
-            </div>
         </form>
     </div>
     <div class="absolute h-full w-full z-[-1] bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>

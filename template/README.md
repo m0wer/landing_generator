@@ -19,6 +19,8 @@ We are using [tailwind css](v2.tailwindcss.com) with plain html.
 The following variables are available for substitution:
 
 - `{{ title }}` - The title of the page
+- `{{ analytics_html }}` - Allows injection of html code for analytics
+- `{{ page_identifier }}` - Page identifier to save the registered emails to (sent on the form)
 - `{{ tagline }}` - Short text to describe the page
 - `{{ description }}` - The description to show below the tagline
 - `{{ item_1_title }}` - Title for top left item in the gridbox
