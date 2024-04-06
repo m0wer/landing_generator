@@ -3,3 +3,4 @@ __pycache__
 static_pages/
 data/
 conf/
+.env
