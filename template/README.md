@@ -32,5 +32,6 @@ The following variables are available for substitution:
 - `{{ item_4_title }}` - Title for bottom right item in the gridbox
 - `{{ item_4_description }}` - Description for bottom right item in the gridbox
 - `{{ button_text }}` - Text for the button next to the email input field
+- `{{ button_attributes }}` - Additional attributes for the button, e.g. `data-umami-event="button"`
 
 > Form method is always POST

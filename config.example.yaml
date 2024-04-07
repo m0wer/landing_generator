@@ -2,15 +2,15 @@
 
 sites:
   - page_identifier: landing_generator
-    title: Landing Generator
-    tagline: Generate landing pages with email collection in minutes.
-    description: Generate landing pages with email collection in minutes.
-    item_1_title: Validate your idea
-    item_1_description: Create a landing page to validate your idea.
-    item_2_title: Collect emails
-    item_2_description: You will have an audience ready for when you launch.
-    item_3_title: Self hosted
-    item_3_description: Host your landing page on your own server.
-    item_4_title: Secure
+    title: Landing Page Generator
+    tagline: Create Landing Pages with Email Collection
+    description: Landing Generator simplifies the process of creating effective landing pages while enabling you to gather email addresses from potential customers. Efficient, straightforward, and user-friendly.
+    item_1_title: Validate Your Idea
+    item_1_description: Test the viability of your business idea with real user feedback.
+    item_2_title: Build Your Audience Early
+    item_2_description: Begin gathering email addresses right away. Our tools are designed for easy email collection, helping you create a solid foundation for your launch.
+    item_3_title: Self-Hosting Option
+    item_3_description: Choose to host your landing page on your own server for more control over your content and better alignment with your existing digital strategy.
+    item_4_title: Enhanced Data Security
     item_4_description: Your data is safe and secure and not shared with anyone.
-    button_text: Get more info
+    button_text: Learn More

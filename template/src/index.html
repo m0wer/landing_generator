@@ -72,6 +72,7 @@
                     <button id="submit" title="I am interested"
                         class="relative w-full items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-gray-900 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
                         disabled
+                        {{ button_attributes }}
                     >
                     {{ button_text }}
                     </button>
@@ -80,7 +81,7 @@
             <div class="relative flex flex-col justify-start xl:items-start items-center w-full sm:w-96" style="display: none;" id="success">
 
                 <p class="max-w-lg lg:max-w-2xl text-black text-xl">
-                    Sent successfully!
+                    We'll be in touch soon!
                 </p>
         </div>
 
@@ -92,5 +93,3 @@
     <script src="scripts.js"></script>
 </body>
 </html>
-
-
