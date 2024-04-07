@@ -9,7 +9,6 @@ STATIC_PAGES_DIR: Path = Path("./static_pages")
 
 
 class ConfigHandler(FileSystemEventHandler):
-
     def __init__(self):
         self.site_renderer = SiteRenderer(CONF_PATH, TEMPLATE_SRC, STATIC_PAGES_DIR)
 
