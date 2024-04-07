@@ -1,19 +1,26 @@
 """FastAPI module to serve the backend API and all frontend sites."""
 
 from contextlib import asynccontextmanager
-from fastapi import FastAPI, Depends, Request, Path as FasAPIPath
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import Response
-from pydantic import EmailStr, Field, BaseModel
-from os import getenv
 from datetime import datetime
+from os import getenv
 from pathlib import Path
+
+from fastapi import Depends, FastAPI
+from fastapi import Path as FasAPIPath
+from fastapi import Request
+from fastapi.responses import Response
+from fastapi.staticfiles import StaticFiles
+from modules.config_handler import ConfigHandler
+from pydantic import BaseModel, EmailStr, Field
+from watchdog.observers import Observer
 
 API_PREFIX: str = getenv("API_PREFIX", "/api")
 DATA_PATH: Path = Path(getenv("DATA_PATH", "./data"))
 CSV_HEADER: str = "email,timestamp\n"
 ADMIN_SECRET: str = getenv("ADMIN_SECRET", "admin")
 STATIC_PAGES_DIR: Path = Path(getenv("STATIC_PAGES_DIR", "./static_pages"))
+
+CONF_PATH: Path = Path("./conf/config.yaml")
 
 
 @asynccontextmanager
@@ -99,3 +106,8 @@ async def get_emails(
 
 
 app.mount("/", StaticFiles(directory=STATIC_PAGES_DIR, html=True), name="static")
+
+observer = Observer()
+config_handler = ConfigHandler()
+observer.schedule(config_handler, path=CONF_PATH, recursive=False)
+observer.start()
