@@ -3,8 +3,8 @@
 sites:
   - page_identifier: landing_generator
     title: Landing Generator
-    tagline: Generate landing pages wih email collection in minutes.
-    description: Generate landing pages wih email collection in minutes.
+    tagline: Generate landing pages with email collection in minutes.
+    description: Generate landing pages with email collection in minutes.
     item_1_title: Validate your idea
     item_1_description: Create a landing page to validate your idea.
     item_2_title: Collect emails
