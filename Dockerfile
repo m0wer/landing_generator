@@ -1,6 +1,7 @@
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.11
 
-RUN adduser --system --group --no-create-home appuser
+RUN groupadd --gid 1000 appuser \
+    && useradd --uid 1000 --gid appuser --shell /bin/bash --no-create-home appuser
 
 COPY ./requirements.txt /app/
 RUN pip install --no-cache-dir -r /app/requirements.txt
