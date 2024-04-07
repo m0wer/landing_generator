@@ -16,4 +16,4 @@ services:
     ports:
       - ${WEB_PORT:-8000}:80
     restart: unless-stopped
-    USER: ${DOCKER_USER:-1000:1000}
+    user: ${DOCKER_USER:-1000:1000}
