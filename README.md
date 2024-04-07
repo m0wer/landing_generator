@@ -50,3 +50,34 @@ cp .env.example .env
 # edit the .env file
 docker compose up -d --build
 ```
+
+## Notifications for sigunps
+
+Here is an example script that uses `telegram-send` to send a notification
+every time someone signs up:
+
+```bash
+#!/bin/bash
+
+DIRECTORY_TO_WATCH="/data/idea/data/"
+
+# Check if DIRECTORY_TO_WATCH was provided
+if [[ ! -d "$DIRECTORY_TO_WATCH" ]]; then
+  echo "Error: Directory '$DIRECTORY_TO_WATCH' does not exist."
+  exit 1
+fi
+
+# Using inotifywait to monitor for 'create' and 'modify' events on CSV files
+inotifywait -m -e create -e modify -e moved_to --format '%w%f' -q "$DIRECTORY_TO_WATCH" | while read FILE_PATH
+do
+  # Check if the event pertains to a CSV file
+  if [[ $FILE_PATH == *.csv ]]
+  then
+    # Get the last line from the file
+    LAST_LINE=$(tail -n 1 "$FILE_PATH")
+
+    # Send the last line via telegram-send
+    telegram-send "$(basename $FILE_PATH): $LAST_LINE"
+  fi
+done
+```
