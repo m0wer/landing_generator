@@ -37,12 +37,33 @@ class SiteRenderer:
         with open(site_path / "index.html", "w") as f:
             f.write(rendered)
 
+    def create_index_page(self, conf) -> None:
+        index_html = f"""<html>
+        <head>
+            <title>Idea projects</title>
+        </head>
+        <body>
+            <h1>All projects</h1>
+            <ul>
+                {"".join([
+                    f'<li><a href="{site["page_identifier"]}/">{site["title"]}</a>: {site["description"]}</li>'
+                    for site in conf["sites"]
+                ])}
+            </ul>
+        </body>
+        </html>"""
+
+        with open(self.static_pages_dir / "index.html", "w") as f:
+            f.write(index_html)
+
     def render_sites(self) -> None:
         with open(self.conf_path, "r") as conf_file:
             conf = yaml.safe_load(conf_file)
 
         for site in conf["sites"]:
             self.render_site(site)
+
+        self.create_index_page(conf)
 
 
 if __name__ == "__main__":
